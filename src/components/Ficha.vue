@@ -1,16 +1,16 @@
 <template>
   <div class="text-center">
-    <!-- <h1>Hijo</h1> -->
+    <!-- <h1 class="">Hijo</h1> -->
   </div>
   <div class="d-flex justify-content-center">
-    <div class="text-center">
+    <div class="text-center mx-auto my-auto">
       <br />
       <button class="ropa btn btn-primary">
         {{ cosa.ropa }} ({{ cosa.marca }})
       </button>
     </div>
     <br />
-    <div class="estrellas">
+    <div class="estrellas mx-auto my-auto">
       <span v-for="index in cosa.nota" :key="index">
         <img
           class="estrella"
@@ -20,7 +20,7 @@
       </span>
     </div>
     <br />
-    <div class="">
+    <div class="mx-auto my-auto">
       <button
         @click="incrementarNota(cosa.nota, index)"
         class="btn btn-success"
