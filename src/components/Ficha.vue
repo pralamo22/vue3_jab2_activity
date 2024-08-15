@@ -21,7 +21,12 @@
     </div>
     <br />
     <div class="">
-      <button class="btn btn-success">+</button>
+      <button
+        @click="incrementarNota(cosa.nota, index)"
+        class="btn btn-success"
+      >
+        +
+      </button>
     </div>
   </div>
 </template>
@@ -31,6 +36,11 @@ const props = defineProps({
   cosa: String,
   index: Number,
 });
+
+const emito = defineEmits(["retorno"]);
+const incrementarNota = (a, i) => {
+  emito("retorno", a, i);
+};
 </script>
 
 <style lang="css" scoped>
