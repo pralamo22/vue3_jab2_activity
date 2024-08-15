@@ -1,47 +1,20 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <br><br>
+  <div class="text-center">
+    <!-- <h1>Padre</h1> -->
+  </div>
+  <div v-for="(cosa,index) in cosas" :key="index" class="text-center">
+    <FichaVue :cosa="cosa" :index="index" />
+  </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+  import FichaVue from './components/Ficha.vue';
+  import cosas from './assets/datos.js';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+<style lang="css" scoped>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
